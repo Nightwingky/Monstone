@@ -6,4 +6,10 @@
     android:layout_height="match_parent"
     tools:context="com.example.nightwingky.monstone.user_action.user_forget_pwd.UserForgetPwdActivity">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="home"
+        android:textSize="36sp"/>
+
 </LinearLayout>

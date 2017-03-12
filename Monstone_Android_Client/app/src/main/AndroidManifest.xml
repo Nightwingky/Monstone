@@ -18,7 +18,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".user_action.user_forget_pwd.UserForgetPwdActivity" />
-        <activity android:name=".user_action.user_register.UserRegisterActivity"></activity>
+        <activity android:name=".user_action.user_register.UserRegisterActivity" />
+        <activity android:name=".main_program.MainFragmentActivity"></activity>
     </application>
 
 </manifest>

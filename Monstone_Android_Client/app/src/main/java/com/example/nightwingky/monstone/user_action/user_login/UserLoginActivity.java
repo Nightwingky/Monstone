@@ -10,6 +10,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.nightwingky.monstone.R;
+import com.example.nightwingky.monstone.main_program.MainFragmentActivity;
 import com.example.nightwingky.monstone.myConst.MyConst;
 import com.example.nightwingky.monstone.user_action.user_forget_pwd.UserForgetPwdActivity;
 
@@ -34,6 +35,11 @@ public class UserLoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_layout_user_login);
 
         bindView();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
     }
 
     private void bindView() {
@@ -99,6 +105,9 @@ public class UserLoginActivity extends AppCompatActivity {
 
             if(s == "true") {
                 Toast.makeText(UserLoginActivity.this, "登陆成功", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(UserLoginActivity.this, MainFragmentActivity.class);
+                startActivity(intent);
+                finish();
             } else {
                 Toast.makeText(UserLoginActivity.this, "登录失败", Toast.LENGTH_SHORT).show();
             }
