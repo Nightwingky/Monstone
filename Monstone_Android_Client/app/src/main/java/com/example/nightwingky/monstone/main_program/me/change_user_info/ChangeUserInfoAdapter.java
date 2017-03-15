@@ -12,9 +12,7 @@ import android.widget.TextView;
 import com.example.nightwingky.monstone.R;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
  * Created by nightwingky on 17-3-13.
@@ -88,17 +86,13 @@ public class ChangeUserInfoAdapter extends BaseAdapter {
 
             return convertView;
         } else {
-//            ViewHolderElse viewHolderElse;
-//            if(convertView == null) {
             ViewHolderElse viewHolderElse = new ViewHolderElse();
             convertView = mInflater.inflate(R.layout.item_else_change_user_info, null);
             viewHolderElse.tv_else = (TextView) convertView.findViewById(R.id.tv_else_change_user_info);
             viewHolderElse.edit_else = (EditText) convertView.findViewById(R.id.editText_else_change_user_info);
 
             convertView.setTag(viewHolderElse);
-//            } else {
-//                viewHolderElse = (ViewHolderElse) convertView.getTag();
-//            }
+
             viewHolderElse.tv_else.setText(titleList.get(position));
             viewHolderElse.edit_else.setText(String.valueOf(infoList.get(position)));
 

@@ -10,13 +10,13 @@ public class ChangeUserInfoVO {
     private String name;
     private int gender;
     private String birth;
-    private int mobile;
+    private String mobile;
     private String email;
     private String portrait;
     private String introduction;
 
     public ChangeUserInfoVO(String no, String name, int gender, String birth,
-                            int mobile, String email, String portrait, String introduction) {
+                            String mobile, String email, String portrait, String introduction) {
         this.no = no;
         this.name = name;
         this.gender = gender;
@@ -59,11 +59,11 @@ public class ChangeUserInfoVO {
         this.birth = birth;
     }
 
-    public int getMobile() {
+    public String getMobile() {
         return mobile;
     }
 
-    public void setMobile(int mobile) {
+    public void setMobile(String mobile) {
         this.mobile = mobile;
     }
 

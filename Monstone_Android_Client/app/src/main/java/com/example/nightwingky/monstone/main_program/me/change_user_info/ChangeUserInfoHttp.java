@@ -1,5 +1,7 @@
 package com.example.nightwingky.monstone.main_program.me.change_user_info;
 
+import com.example.nightwingky.monstone.myConst.MyConst;
+
 import java.io.IOException;
 
 import okhttp3.FormBody;
@@ -13,12 +15,8 @@ import okhttp3.Response;
 
 public class ChangeUserInfoHttp {
 
-    public static String changeUserInfoQuery(String URL, String user_id) throws IOException {
+    private static String query(FormBody formBody, String URL) throws IOException {
         OkHttpClient okHttpClient = new OkHttpClient();
-
-        FormBody formBody = new FormBody.Builder()
-                .add("no", user_id)
-                .build();
 
         Request request = new Request.Builder()
                 .url(URL)
@@ -32,5 +30,57 @@ public class ChangeUserInfoHttp {
         } else {
             return null;
         }
+    }
+
+    public static String getUserInfo(String URL, String user_id) throws IOException {
+
+        FormBody formBody = new FormBody.Builder()
+                .add("no", user_id)
+                .build();
+
+        return query(formBody, URL);
+    }
+
+    public static String changeUserName(String URL, String name) throws IOException {
+
+        FormBody formBody = new FormBody.Builder()
+                .add("no", MyConst.getUser_id())
+                .add("name", name)
+                .build();
+
+        return query(formBody, URL);
+    }
+
+    public static String changeUserGender(String URL, String gender) throws IOException {
+
+        int mGender;
+
+        switch (gender) {
+            case "男":
+                mGender = 0;
+                break;
+            case "女":
+                mGender = 1;
+                break;
+            default:
+                mGender = 2;
+                break;
+        }
+
+        FormBody formBody = new FormBody.Builder()
+                .add("no", MyConst.getUser_id())
+                .add("gender", String.valueOf(mGender))
+                .build();
+
+        return query(formBody, URL);
+    }
+
+    public static String changeUserMobile(String URL, String mobile) throws IOException {
+        FormBody formBody = new FormBody.Builder()
+                .add("no", MyConst.getUser_id())
+                .add("mobile", mobile)
+                .build();
+
+        return query(formBody, URL);
     }
 }
