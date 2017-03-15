@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="15"
+    android:background="@color/layout_gray_me">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="30sp"
+        android:orientation="horizontal"
+        android:background="@color/colorWhite"
+        android:id="@+id/linearLayout_title_change_user_info">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="5"
+            android:layout_height="match_parent"
+            android:text="我的资料"
+            android:gravity="center_vertical|center_horizontal"
+            android:textSize="22sp"
+            android:textColor="#000000"/>
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/view_top_change_user_info"
+        android:layout_width="match_parent"
+        android:layout_height="10sp"
+        android:background="@color/layout_gray_me"
+        android:layout_below="@id/linearLayout_title_change_user_info"/>
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorWhite"
+        android:id="@+id/lv_change_user_info"
+        android:layout_below="@+id/view_top_change_user_info">
+
+    </ListView>
+
+    <View
+        android:id="@+id/view_below_change_user_info"
+        android:layout_width="match_parent"
+        android:layout_height="10sp"
+        android:background="@color/layout_gray_me"
+        android:layout_below="@id/lv_change_user_info"/>
+
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:text="保        存"
+        android:textSize="22sp"
+        android:textColor="@color/colorWhite"
+        android:background="@color/colorPrimary"
+        android:id="@+id/btn_save_change_user_info"
+        android:layout_below="@id/view_below_change_user_info"/>
+
+</RelativeLayout>

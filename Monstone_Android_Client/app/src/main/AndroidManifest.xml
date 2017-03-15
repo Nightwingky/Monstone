@@ -19,7 +19,8 @@
         </activity>
         <activity android:name=".user_action.user_forget_pwd.UserForgetPwdActivity" />
         <activity android:name=".user_action.user_register.UserRegisterActivity" />
-        <activity android:name=".main_program.MainFragmentActivity"></activity>
+        <activity android:name=".main_program.MainFragmentActivity" />
+        <activity android:name=".main_program.me.change_user_info.ChangeUserInfoActivity"></activity>
     </application>
 
 </manifest>

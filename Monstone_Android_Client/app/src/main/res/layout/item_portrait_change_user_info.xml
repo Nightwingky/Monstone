@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorWhite"
+    android:padding="10dp"
+    android:weightSum="10">
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_weight="3"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:text="头像"
+        android:textSize="15sp"
+        android:id="@+id/tv_portrait_change_user_info"/>
+
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_weight="1.2"
+        android:layout_height="40dp"
+        android:src="@mipmap/ic_launcher"
+        android:id="@+id/img_portrait_change_user_info"/>
+</LinearLayout>
