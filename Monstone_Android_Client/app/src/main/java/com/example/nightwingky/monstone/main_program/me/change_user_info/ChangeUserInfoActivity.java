@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 
@@ -41,6 +42,13 @@ public class ChangeUserInfoActivity extends AppCompatActivity {
     private void bindView() {
         this.mListView = (ListView) findViewById(R.id.lv_change_user_info);
         this.btn_save = (Button) findViewById(R.id.btn_save_change_user_info);
+
+        mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+            }
+        });
 
         btn_save.setOnClickListener(new View.OnClickListener() {
             @Override

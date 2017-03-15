@@ -16,10 +16,10 @@
         android:textSize="15sp"
         android:id="@+id/tv_else_change_user_info"/>
 
-    <EditText
+    <TextView
         android:layout_width="0dp"
         android:layout_weight="5"
         android:layout_height="wrap_content"
         android:background="@color/colorWhite"
-        android:id="@+id/editText_else_change_user_info"/>
+        android:id="@+id/tv_info_else_change_user_info"/>
 </LinearLayout>

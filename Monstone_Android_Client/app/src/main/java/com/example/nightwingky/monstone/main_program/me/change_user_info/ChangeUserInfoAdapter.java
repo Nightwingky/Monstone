@@ -5,7 +5,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -89,12 +88,12 @@ public class ChangeUserInfoAdapter extends BaseAdapter {
             ViewHolderElse viewHolderElse = new ViewHolderElse();
             convertView = mInflater.inflate(R.layout.item_else_change_user_info, null);
             viewHolderElse.tv_else = (TextView) convertView.findViewById(R.id.tv_else_change_user_info);
-            viewHolderElse.edit_else = (EditText) convertView.findViewById(R.id.editText_else_change_user_info);
+            viewHolderElse.tv_info = (TextView) convertView.findViewById(R.id.tv_info_else_change_user_info);
 
             convertView.setTag(viewHolderElse);
 
             viewHolderElse.tv_else.setText(titleList.get(position));
-            viewHolderElse.edit_else.setText(String.valueOf(infoList.get(position)));
+            viewHolderElse.tv_info.setText(String.valueOf(infoList.get(position)));
 
             return convertView;
         }
@@ -108,6 +107,6 @@ public class ChangeUserInfoAdapter extends BaseAdapter {
 
     class ViewHolderElse {
         public TextView tv_else;
-        public EditText edit_else;
+        public TextView tv_info;
     }
 }
