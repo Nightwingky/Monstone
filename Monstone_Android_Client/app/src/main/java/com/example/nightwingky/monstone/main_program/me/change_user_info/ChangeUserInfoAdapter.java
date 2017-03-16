@@ -95,6 +95,10 @@ public class ChangeUserInfoAdapter extends BaseAdapter {
             viewHolderElse.tv_else.setText(titleList.get(position));
             viewHolderElse.tv_info.setText(String.valueOf(infoList.get(position)));
 
+            if (position == 6) {
+                viewHolderElse.tv_info.setText("生命中，有风，有雨，但别忘了也会有阳光");
+            }
+
             return convertView;
         }
 
