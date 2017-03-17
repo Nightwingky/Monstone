@@ -81,7 +81,7 @@ public class ChangeUserInfoAdapter extends BaseAdapter {
 
             convertView.setTag(viewHolderPortrait);
 
-            viewHolderPortrait.img_portrait.setImageResource(R.mipmap.ic_launcher);
+            viewHolderPortrait.img_portrait.setImageResource(R.drawable.portrait);
 
             return convertView;
         } else {
