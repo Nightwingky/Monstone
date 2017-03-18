@@ -13,5 +13,4 @@ package com.example.nightwingky.monstone.location;
 
 public class MyLocation {
 
-
 }

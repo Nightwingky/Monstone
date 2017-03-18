@@ -3,4 +3,5 @@
     <string name="information">Information</string>
     <string name="payment">去 结 算</string>
     <string name="addToCart">加入购物车</string>
+    <string name="put_out_title">标题 品类品牌型号</string>
 </resources>
