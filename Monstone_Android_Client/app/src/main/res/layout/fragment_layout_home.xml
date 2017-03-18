@@ -11,10 +11,6 @@
         android:orientation="horizontal"
         android:background="@color/colorPrimary">
 
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"/>
 
         <android.support.v7.widget.SearchView
             android:layout_width="0dp"
@@ -23,10 +19,14 @@
             android:queryHint="小零食"
             android:background="@color/colorWhite"/>
 
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"/>
     </LinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="14"
+        android:id="@+id/rv_home">
+
+    </android.support.v7.widget.RecyclerView>
 
 </LinearLayout>
