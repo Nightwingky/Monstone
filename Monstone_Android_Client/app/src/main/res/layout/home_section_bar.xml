@@ -1,18 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:background="@color/layout_gray_me">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1sp"
+        android:background="@color/layout_gray_me"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="新 鲜 的"
-        android:layout_marginTop="15sp"
+        android:text="新上线的"
+        android:layout_marginTop="10sp"
         android:paddingLeft="15sp"
         android:paddingTop="5sp"
         android:paddingBottom="5sp"
         android:textColor="#000000"
-        android:background="@color/layout_gray_me"
+        android:background="@color/colorWhite"
         android:id="@+id/fresh_home_list"
         />
 

@@ -104,17 +104,17 @@ public class HomeConst {
         mList.add(new FreshListItemVO(
                 "小米5s 4+128G 高配全网通双卡移动联通电信手机 外壳有轻微磕碰 功能正常",
                 "queky1024",
-                "1599.00"
+                "￥1599.00"
         ));
         mList.add(new FreshListItemVO(
                 "s7edge，外观近全新，32g，支持拓展内存卡，蝙蝠侠国行系统，单卡三网4g，没拆修",
                 "queky1024",
-                "2299.00"
+                "￥2299.00"
         ));
         mList.add(new FreshListItemVO(
                 "魅族mx4pro手机成色9成新白色3+16g2070万像素5.5英寸移动联通4g支持指纹解锁外观9成新",
                 "queky1024",
-                "500.00"
+                "￥500.00"
         ));
 
         return mList;

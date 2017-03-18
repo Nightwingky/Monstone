@@ -24,6 +24,7 @@ public class MeListViewAdapter extends BaseAdapter {
 
     public MeListViewAdapter(Context context) {
         this.mTextList = new ArrayList<String>();
+        this.mTextList.add("正在交易");
         this.mTextList.add("我发布的");
         this.mTextList.add("我卖出的");
         this.mTextList.add("我买到的");
