@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.nightwingky.monstone.R;
+import com.example.nightwingky.monstone.main_program.home.freshList.FreshListItemVO;
 import com.example.nightwingky.monstone.main_program.home.homeConst.HomeConst;
 import com.example.nightwingky.monstone.main_program.home.itemList.ItemListGridVO;
 import com.example.nightwingky.monstone.main_program.home.titleBar.TitleBarGridVO;
@@ -29,6 +30,8 @@ public class FragmentHome extends Fragment {
     private List<TitleBarGridVO> titleBarList;
     private List<Object> divideList;
     private List<ItemListGridVO> itemList;
+    private List<Object> freshList;
+    private List<FreshListItemVO> freshListItemVOList;
 
     private FragmentHomeAdapter mAdapter;
 
@@ -46,7 +49,8 @@ public class FragmentHome extends Fragment {
 
                 if (type == FragmentHomeAdapter.TYPE_THREE) {
                     return gridLayoutManager.getSpanCount() / 2;
-                } else if (type == FragmentHomeAdapter.TYPE_FOUR || type == FragmentHomeAdapter.TYPE_ONE) {
+                } else if (type == FragmentHomeAdapter.TYPE_FOUR || type == FragmentHomeAdapter.TYPE_ONE ||
+                type == FragmentHomeAdapter.TYPE_FIVE || type == FragmentHomeAdapter.TYPE_SIX) {
                     return 4;
                 } else {
                     return 1;
@@ -71,8 +75,10 @@ public class FragmentHome extends Fragment {
         this.titleBarList = HomeConst.getTitleBar();
         this.divideList = HomeConst.getDivide();
         this.itemList = HomeConst.getItem();
+        this.freshList = HomeConst.getFresh();
+        this.freshListItemVOList = HomeConst.getFreshListItemVOList();
 
-        mAdapter.addList(flipperList, titleBarList, divideList, itemList);
+        mAdapter.addList(flipperList, titleBarList, divideList, itemList, freshList, freshListItemVOList);
         mAdapter.notifyDataSetChanged();
     }
 

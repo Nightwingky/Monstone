@@ -17,7 +17,8 @@
             android:layout_weight="8"
             android:layout_height="match_parent"
             android:queryHint="小零食"
-            android:background="@color/colorWhite"/>
+            android:background="@color/colorWhite"
+            android:id="@+id/search_home"/>
 
     </LinearLayout>
 

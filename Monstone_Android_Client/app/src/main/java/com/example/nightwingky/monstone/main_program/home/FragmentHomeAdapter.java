@@ -8,6 +8,9 @@ import android.view.ViewGroup;
 
 import com.example.nightwingky.monstone.R;
 import com.example.nightwingky.monstone.main_program.home.divide.DivideViewHolder;
+import com.example.nightwingky.monstone.main_program.home.fresh.FreshViewHolder;
+import com.example.nightwingky.monstone.main_program.home.freshList.FreshListItemVO;
+import com.example.nightwingky.monstone.main_program.home.freshList.FreshListViewHolder;
 import com.example.nightwingky.monstone.main_program.home.itemList.ItemListBarViewHolder;
 import com.example.nightwingky.monstone.main_program.home.itemList.ItemListGridVO;
 import com.example.nightwingky.monstone.main_program.home.titleBar.TitleBarGridVO;
@@ -29,6 +32,8 @@ public class FragmentHomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
     public static final int TYPE_TWO = 2;
     public static final int TYPE_THREE = 3;
     public static final int TYPE_FOUR = 4;
+    public static final int TYPE_FIVE = 5;
+    public static final int TYPE_SIX = 6;
 
     private LayoutInflater inflater;
 
@@ -36,6 +41,8 @@ public class FragmentHomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
     private List<TitleBarGridVO> mTitleList;
     private List<Object> mDivideList;
     private List<ItemListGridVO> mItemList;
+    private List<Object> mFreshList;
+    private List<FreshListItemVO> mFreshVOList;
 
     private Context context;
 
@@ -48,16 +55,21 @@ public class FragmentHomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
     }
 
     public void addList(List<Object> flipperList, List<TitleBarGridVO> titleList,
-                        List<Object> divideList, List<ItemListGridVO> itemList) {
+                        List<Object> divideList, List<ItemListGridVO> itemList,
+                        List<Object> freshList, List<FreshListItemVO> freshListItemVOList) {
         addListByType(TYPE_ONE, flipperList);
         addListByType(TYPE_TWO, titleList);
         addListByType(TYPE_FOUR, divideList);
         addListByType(TYPE_THREE, itemList);
+        addListByType(TYPE_FIVE, freshList);
+        addListByType(TYPE_SIX, freshListItemVOList);
 
         this.mFlipperList = flipperList;
         this.mTitleList = titleList;
         this.mDivideList = divideList;
         this.mItemList = itemList;
+        this.mFreshList = freshList;
+        this.mFreshVOList = freshListItemVOList;
     }
 
     private void addListByType(int type, List list) {
@@ -79,6 +91,10 @@ public class FragmentHomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
                 return new ItemListBarViewHolder(inflater.inflate(R.layout.home_list_item_grid, parent, false));
             case TYPE_FOUR:
                 return new DivideViewHolder(inflater.inflate(R.layout.home_divide_view, parent, false));
+            case TYPE_FIVE:
+                return new FreshViewHolder(inflater.inflate(R.layout.home_section_bar, parent, false));
+            case TYPE_SIX:
+                return new FreshListViewHolder(inflater.inflate(R.layout.home_new_list_item, parent, false));
         }
 
         return null;
@@ -91,7 +107,7 @@ public class FragmentHomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
 
         switch (viewType) {
             case TYPE_ONE:
-                ((ViewFlipperViewHolder) holder).bindHolder(mItemList.get(realPosition));
+                ((ViewFlipperViewHolder) holder).bindHolder(mFlipperList.get(realPosition));
                 break;
             case TYPE_TWO:
                 ((TitleBarViewHolder) holder).bindHolder(mTitleList.get(realPosition));
@@ -101,6 +117,12 @@ public class FragmentHomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
                 break;
             case TYPE_FOUR:
                 ((DivideViewHolder) holder).bindHolder(mDivideList.get(realPosition));
+                break;
+            case TYPE_FIVE:
+                ((FreshViewHolder) holder).bindHolder(mFreshList.get(realPosition));
+                break;
+            case TYPE_SIX:
+                ((FreshListViewHolder) holder).bindHolder(mFreshVOList.get(realPosition));
                 break;
         }
     }
