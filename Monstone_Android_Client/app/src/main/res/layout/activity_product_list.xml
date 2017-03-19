@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:weightSum="15">
+    android:weightSum="15"
+    android:orientation="vertical"
+    tools:context="com.example.nightwingky.monstone.main_program.productList.ProductListActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -17,8 +20,7 @@
             android:layout_weight="8"
             android:layout_height="match_parent"
             android:background="@color/colorWhite"
-            android:id="@+id/search_home"
-            />
+            android:id="@+id/search_product"/>
 
     </LinearLayout>
 
@@ -26,7 +28,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="14"
-        android:id="@+id/rv_home">
+        android:id="@+id/recycler_product">
 
     </android.support.v7.widget.RecyclerView>
 

@@ -20,6 +20,8 @@ public class MyConst {
 
     private static final String user_put_out_url = "http://118.228.180.248:8080/api/product/release";
 
+    private static final String product_info_detail_url = "http://118.228.180.248:8080/api/product/setting/baseinfo";
+
     public static void setUser_id(String user_id) {
         MyConst.user_id = user_id;
     }
@@ -50,5 +52,9 @@ public class MyConst {
 
     public static String getUser_put_out_url() {
         return user_put_out_url;
+    }
+
+    public static String getProduct_info_detail_url() {
+        return product_info_detail_url;
     }
 }
