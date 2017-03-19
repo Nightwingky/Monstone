@@ -7,10 +7,10 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.example.nightwingky.monstone.R;
-import com.example.nightwingky.monstone.main_program.home.FragmentHome;
-import com.example.nightwingky.monstone.main_program.me.FragmentMe;
-import com.example.nightwingky.monstone.main_program.put_out.FragmentPutOut;
-import com.example.nightwingky.monstone.main_program.shoppingCart.FragmentShoppingCart;
+import com.example.nightwingky.monstone.main_program.fragmentHome.FragmentHome;
+import com.example.nightwingky.monstone.main_program.fragmentMe.FragmentMe;
+import com.example.nightwingky.monstone.main_program.fragmentPutOut.FragmentPutOut;
+import com.example.nightwingky.monstone.main_program.fragmentShoppingCart.FragmentShoppingCart;
 
 public class MainFragmentActivity extends AppCompatActivity implements View.OnClickListener {
 

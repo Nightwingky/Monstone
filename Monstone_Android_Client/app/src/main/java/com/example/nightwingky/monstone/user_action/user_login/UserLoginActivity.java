@@ -13,6 +13,7 @@ import com.example.nightwingky.monstone.R;
 import com.example.nightwingky.monstone.main_program.MainFragmentActivity;
 import com.example.nightwingky.monstone.myConst.MyConst;
 import com.example.nightwingky.monstone.user_action.user_forget_pwd.UserForgetPwdActivity;
+import com.example.nightwingky.monstone.user_action.user_register.UserRegisterActivity;
 
 import org.json.JSONException;
 
@@ -68,7 +69,7 @@ public class UserLoginActivity extends AppCompatActivity {
         btn_register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(UserLoginActivity.this, UserForgetPwdActivity.class);
+                Intent intent = new Intent(UserLoginActivity.this, UserRegisterActivity.class);
                 startActivity(intent);
             }
         });
