@@ -4,7 +4,7 @@ package com.example.nightwingky.monstone.myConst;
  * Created by nightwingky on 17-3-12.
  */
 
-public class MyConst {
+public class URLConst {
 
     private static String user_id = "";
 
@@ -22,8 +22,10 @@ public class MyConst {
 
     private static final String product_info_detail_url = "http://118.228.180.248:8080/api/product/setting/baseinfo";
 
+    private static final String search_product_list_url = "http://118.228.180.248:8080/api/product/search/normal";
+
     public static void setUser_id(String user_id) {
-        MyConst.user_id = user_id;
+        URLConst.user_id = user_id;
     }
 
     public static String getUser_id() {
@@ -56,5 +58,9 @@ public class MyConst {
 
     public static String getProduct_info_detail_url() {
         return product_info_detail_url;
+    }
+
+    public static String getSearch_product_list_url() {
+        return search_product_list_url;
     }
 }

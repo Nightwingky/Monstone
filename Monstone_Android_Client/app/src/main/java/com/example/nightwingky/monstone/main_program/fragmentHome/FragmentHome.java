@@ -8,19 +8,29 @@ import android.support.annotation.Nullable;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.SearchView;
+import android.widget.Toast;
 
 import com.example.nightwingky.monstone.R;
 import com.example.nightwingky.monstone.main_program.fragmentHome.freshList.FreshListItemVO;
 import com.example.nightwingky.monstone.main_program.fragmentHome.homeConst.HomeConst;
 import com.example.nightwingky.monstone.main_program.fragmentHome.itemList.ItemListGridVO;
+import com.example.nightwingky.monstone.main_program.fragmentHome.search.GetJsonData;
+import com.example.nightwingky.monstone.main_program.fragmentHome.search.SearchHttp;
 import com.example.nightwingky.monstone.main_program.fragmentHome.titleBar.TitleBarGridVO;
 import com.example.nightwingky.monstone.main_program.productList.ProductListActivity;
 import com.example.nightwingky.monstone.main_program.productList.ProductVO;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -42,6 +52,8 @@ public class FragmentHome extends Fragment {
 
     private FragmentHomeAdapter mAdapter;
 
+    private String queryText;
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
@@ -53,6 +65,8 @@ public class FragmentHome extends Fragment {
             @Override
             public boolean onQueryTextSubmit(String query) {
 
+                queryText = String.valueOf(mSearchView.getQuery());
+                new SearchAsync().execute();
                 return true;
             }
 
@@ -104,19 +118,32 @@ public class FragmentHome extends Fragment {
         mAdapter.notifyDataSetChanged();
     }
 
-    class SearchAsync extends AsyncTask<String, Void, ProductVO> {
+    class SearchAsync extends AsyncTask<String, Void, Boolean> {
 
         @Override
-        protected ProductVO doInBackground(String... params) {
-            return null;
+        protected Boolean doInBackground(String... params) {
+            try {
+                SearchHttp.mList = GetJsonData.getJsonData(queryText);
+                return true;
+            } catch (IOException e) {
+                e.printStackTrace();
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+
+            return false;
         }
 
         @Override
-        protected void onPostExecute(ProductVO productVO) {
-            super.onPostExecute(productVO);
+        protected void onPostExecute(Boolean aBoolean) {
+            super.onPostExecute(aBoolean);
 
-            Intent intent = new Intent(FragmentHome.this.getActivity(), ProductListActivity.class);
-            startActivity(intent);
+            if (!aBoolean) {
+                Toast.makeText(FragmentHome.this.getActivity(), "查找失败", Toast.LENGTH_SHORT).show();
+            } else {
+                Intent intent = new Intent(FragmentHome.this.getActivity(), ProductListActivity.class);
+                startActivity(intent);
+            }
         }
     }
 }

@@ -1,6 +1,6 @@
 package com.example.nightwingky.monstone.main_program.fragmentPutOut;
 
-import com.example.nightwingky.monstone.myConst.MyConst;
+import com.example.nightwingky.monstone.myConst.URLConst;
 
 import java.io.IOException;
 
@@ -20,13 +20,13 @@ public class PutOutHttp {
 
         FormBody formBody = new FormBody.Builder()
                 .add("product", name)
-                .add("seller", MyConst.getUser_id())
+                .add("seller", URLConst.getUser_id())
                 .add("price", price)
                 .add("catalog", catalog)
                 .build();
 
         Request request = new Request.Builder()
-                .url(MyConst.getUser_put_out_url())
+                .url(URLConst.getUser_put_out_url())
                 .post(formBody)
                 .build();
 

@@ -1,6 +1,6 @@
 package com.example.nightwingky.monstone.main_program.fragmentMe.change_user_info;
 
-import com.example.nightwingky.monstone.myConst.MyConst;
+import com.example.nightwingky.monstone.myConst.URLConst;
 
 import java.io.IOException;
 
@@ -44,7 +44,7 @@ public class ChangeUserInfoHttp {
     public static String changeUserName(String URL, String name) throws IOException {
 
         FormBody formBody = new FormBody.Builder()
-                .add("no", MyConst.getUser_id())
+                .add("no", URLConst.getUser_id())
                 .add("name", name)
                 .build();
 
@@ -68,7 +68,7 @@ public class ChangeUserInfoHttp {
         }
 
         FormBody formBody = new FormBody.Builder()
-                .add("no", MyConst.getUser_id())
+                .add("no", URLConst.getUser_id())
                 .add("gender", String.valueOf(mGender))
                 .build();
 
@@ -77,7 +77,7 @@ public class ChangeUserInfoHttp {
 
     public static String changeUserMobile(String URL, String mobile) throws IOException {
         FormBody formBody = new FormBody.Builder()
-                .add("no", MyConst.getUser_id())
+                .add("no", URLConst.getUser_id())
                 .add("mobile", mobile)
                 .build();
 

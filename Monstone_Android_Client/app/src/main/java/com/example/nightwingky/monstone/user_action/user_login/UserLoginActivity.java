@@ -11,7 +11,7 @@ import android.widget.Toast;
 
 import com.example.nightwingky.monstone.R;
 import com.example.nightwingky.monstone.main_program.MainFragmentActivity;
-import com.example.nightwingky.monstone.myConst.MyConst;
+import com.example.nightwingky.monstone.myConst.URLConst;
 import com.example.nightwingky.monstone.user_action.user_forget_pwd.UserForgetPwdActivity;
 import com.example.nightwingky.monstone.user_action.user_register.UserRegisterActivity;
 
@@ -28,7 +28,7 @@ public class UserLoginActivity extends AppCompatActivity {
     private Button btn_forget_pwd;
     private Button btn_register;
 
-    private static String userLoginURL = MyConst.getUser_login_url();
+    private static String userLoginURL = URLConst.getUser_login_url();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

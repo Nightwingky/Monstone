@@ -12,7 +12,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.nightwingky.monstone.R;
-import com.example.nightwingky.monstone.myConst.MyConst;
+import com.example.nightwingky.monstone.myConst.URLConst;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -21,10 +21,10 @@ import java.io.IOException;
 
 public class ChangeUserInfoActivity extends AppCompatActivity {
 
-    private String info_url = MyConst.getUser_change_info_url();
-    private String name_url = MyConst.getUser_change_name_url();
-    private String gender_url = MyConst.getUser_change_gender_url();
-    private String mobile_url = MyConst.getUser_change_mobile_url();
+    private String info_url = URLConst.getUser_change_info_url();
+    private String name_url = URLConst.getUser_change_name_url();
+    private String gender_url = URLConst.getUser_change_gender_url();
+    private String mobile_url = URLConst.getUser_change_mobile_url();
 
     private ListView mListView;
     private Button btn_submit;
@@ -112,13 +112,13 @@ public class ChangeUserInfoActivity extends AppCompatActivity {
     }
 
     private ChangeUserInfoVO getVOByJsonData() throws IOException, JSONException {
-        String jsonString = ChangeUserInfoHttp.getUserInfo(info_url, MyConst.getUser_id());
+        String jsonString = ChangeUserInfoHttp.getUserInfo(info_url, URLConst.getUser_id());
 
         JSONObject jsonObject = new JSONObject(jsonString);
         jsonObject = new JSONObject(jsonObject.getString("object"));
 
         ChangeUserInfoVO changeUserInfoVO = new ChangeUserInfoVO(
-                MyConst.getUser_id(),
+                URLConst.getUser_id(),
                 jsonObject.getString("name"),
                 jsonObject.getInt("gender"),
                 jsonObject.getString("birth"),

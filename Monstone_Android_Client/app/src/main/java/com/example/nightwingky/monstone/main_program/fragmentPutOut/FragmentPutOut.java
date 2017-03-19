@@ -65,6 +65,14 @@ public class FragmentPutOut extends Fragment implements View.OnClickListener{
         this.edit_price = (EditText) view.findViewById(R.id.edit_price_put_out);
         this.edit_catalog = (EditText) view.findViewById(R.id.edit_catalog_put_out);
 
+        btn_submit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getText();
+                new PutOutAsyncTask().execute();
+            }
+        });
+
         return view;
     }
 
@@ -88,10 +96,6 @@ public class FragmentPutOut extends Fragment implements View.OnClickListener{
             case R.id.img_upload_fragment_put_out3:
                 count = 3;
                 startImgActivity();
-                break;
-            case R.id.btn_submit_put_out:
-                getText();
-                new PutOutAsyncTask().execute();
                 break;
         }
     }
@@ -168,6 +172,7 @@ public class FragmentPutOut extends Fragment implements View.OnClickListener{
 
             if (aBoolean == true) {
                 Toast.makeText(FragmentPutOut.this.getActivity(), "发布成功", Toast.LENGTH_SHORT).show();
+
             } else {
                 Toast.makeText(FragmentPutOut.this.getActivity(), "发布失败，请稍后再尝试", Toast.LENGTH_SHORT).show();
             }

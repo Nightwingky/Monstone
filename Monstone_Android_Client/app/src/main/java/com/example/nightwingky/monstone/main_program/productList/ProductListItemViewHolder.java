@@ -6,6 +6,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.nightwingky.monstone.R;
+import com.example.nightwingky.monstone.myConst.LocationConst;
 
 /**
  * Created by nightwingky on 17-3-19.
@@ -36,6 +37,7 @@ public class ProductListItemViewHolder extends RecyclerView.ViewHolder {
         tv_seller.setText(productVO.getSeller());
         tv_price.setText("￥" + productVO.getPrice());
         tv_title.setText(productVO.getName());
+        productVO.setLocation(LocationConst.getRandomLoc());
         tv_location.setText(productVO.getLocation());
         tv_time.setText(productVO.getReleaseTime());
     }

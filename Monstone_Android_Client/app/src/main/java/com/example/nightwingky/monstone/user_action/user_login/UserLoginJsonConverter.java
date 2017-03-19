@@ -2,7 +2,7 @@ package com.example.nightwingky.monstone.user_action.user_login;
 
 import android.util.Log;
 
-import com.example.nightwingky.monstone.myConst.MyConst;
+import com.example.nightwingky.monstone.myConst.URLConst;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -19,8 +19,8 @@ public class UserLoginJsonConverter {
         String success = jsonObject.getString("success");
         String user_id = jsonObject.getString("object");
 
-        MyConst.setUser_id(user_id);
-        Log.d("user_id", MyConst.getUser_id());
+        URLConst.setUser_id(user_id);
+        Log.d("user_id", URLConst.getUser_id());
 
         return success;
     }

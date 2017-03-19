@@ -1,17 +1,32 @@
 package com.example.nightwingky.monstone.main_program.productList;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.AsyncTask;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.SearchView;
+import android.widget.Toast;
 
 import com.example.nightwingky.monstone.R;
+import com.example.nightwingky.monstone.main_program.fragmentHome.search.GetJsonData;
+import com.example.nightwingky.monstone.main_program.fragmentHome.search.SearchHttp;
+
+import org.json.JSONException;
+
+import java.io.IOException;
 
 public class ProductListActivity extends AppCompatActivity {
 
     private SearchView mSearchView;
     private RecyclerView rv_list;
+
+    private ProductListAdapter adapter;
+
+    private String queryText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,10 +36,18 @@ public class ProductListActivity extends AppCompatActivity {
         mSearchView = (SearchView) findViewById(R.id.search_product);
         rv_list = (RecyclerView) findViewById(R.id.recycler_product);
 
+        rv_list.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
+
+        adapter = new ProductListAdapter(this);
+        adapter.addList(SearchHttp.mList);
+        rv_list.setAdapter(adapter);
+        adapter.notifyDataSetChanged();
+
         mSearchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
-                rv_list.invalidate();
+                queryText = String.valueOf(mSearchView.getQuery());
+                new SearchAsync().execute();
                 return true;
             }
 
@@ -35,16 +58,38 @@ public class ProductListActivity extends AppCompatActivity {
         });
     }
 
-    class SearchAsync extends AsyncTask<String, Void, ProductVO> {
+    protected void refresh() {
+        onCreate(null);
+    }
+
+    class SearchAsync extends AsyncTask<String, Void, Boolean> {
 
         @Override
-        protected ProductVO doInBackground(String... params) {
-            return null;
+        protected Boolean doInBackground(String... params) {
+            try {
+                SearchHttp.mList = GetJsonData.getJsonData(queryText);
+                return true;
+            } catch (IOException e) {
+                e.printStackTrace();
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+
+            return false;
         }
 
         @Override
-        protected void onPostExecute(ProductVO productVO) {
-            super.onPostExecute(productVO);
+        protected void onPostExecute(Boolean aBoolean) {
+            super.onPostExecute(aBoolean);
+
+            if (!aBoolean) {
+                Toast.makeText(ProductListActivity.this, "查找失败", Toast.LENGTH_SHORT).show();
+            } else {
+                adapter.addList(SearchHttp.mList);
+                adapter.notifyDataSetChanged();
+                InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+                imm.hideSoftInputFromWindow(mSearchView.getWindowToken(), 0) ;
+            }
         }
     }
 }
