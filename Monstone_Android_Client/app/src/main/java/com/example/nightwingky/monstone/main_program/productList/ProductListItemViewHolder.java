@@ -12,7 +12,7 @@ import com.example.nightwingky.monstone.myConst.LocationConst;
  * Created by nightwingky on 17-3-19.
  */
 
-public class ProductListItemViewHolder extends RecyclerView.ViewHolder {
+public class ProductListItemViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
 
     private ImageView img_portrait;
     private TextView tv_seller;
@@ -21,7 +21,9 @@ public class ProductListItemViewHolder extends RecyclerView.ViewHolder {
     private TextView tv_location;
     private TextView tv_time;
 
-    public ProductListItemViewHolder(View itemView) {
+    private MyItemClickListener mListener;
+
+    public ProductListItemViewHolder(View itemView, MyItemClickListener listener) {
         super(itemView);
 
         img_portrait = (ImageView) itemView.findViewById(R.id.img_portrait_product_list_item);
@@ -30,6 +32,8 @@ public class ProductListItemViewHolder extends RecyclerView.ViewHolder {
         tv_title = (TextView) itemView.findViewById(R.id.title_product_list);
         tv_location = (TextView) itemView.findViewById(R.id.location_product_list_item);
         tv_time = (TextView) itemView.findViewById(R.id.time_product_list_item);
+
+        this.mListener = listener;
     }
 
     public void bindHolder(ProductVO productVO) {
@@ -40,5 +44,12 @@ public class ProductListItemViewHolder extends RecyclerView.ViewHolder {
         productVO.setLocation(LocationConst.getRandomLoc());
         tv_location.setText(productVO.getLocation());
         tv_time.setText(productVO.getReleaseTime());
+    }
+
+    @Override
+    public void onClick(View v) {
+        if(mListener != null) {
+            mListener.onItemClick(v, getPosition());
+        }
     }
 }

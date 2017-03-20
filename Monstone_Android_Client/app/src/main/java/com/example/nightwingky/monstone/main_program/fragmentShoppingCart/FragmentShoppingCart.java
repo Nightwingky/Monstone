@@ -14,6 +14,8 @@ import com.example.nightwingky.monstone.R;
  */
 
 public class FragmentShoppingCart extends Fragment {
+
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {

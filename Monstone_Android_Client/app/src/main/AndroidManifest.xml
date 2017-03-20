@@ -50,7 +50,8 @@
         <activity android:name=".main_program.MainFragmentActivity" />
         <activity android:name=".main_program.fragmentMe.change_user_info.ChangeUserInfoActivity" />
         <activity android:name=".main_program.fragmentMe.change_user_info.ItemChangeUserInfoActivity" />
-        <activity android:name=".main_program.productList.ProductListActivity"></activity>
+        <activity android:name=".main_program.productList.ProductListActivity" />
+        <activity android:name=".main_program.product_Item.ProductActivity"></activity>
     </application>
 
 </manifest>

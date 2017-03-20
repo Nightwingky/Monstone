@@ -13,12 +13,13 @@ public class ProductVO {
     private String introduction;
     private String location;
     private String releaseTime;
+    private String productId;
 
     public ProductVO() {
     }
 
-    public ProductVO(String name, String seller, String price, String catalog,
-                     String introduction, String location, String releaseTime) {
+    public ProductVO(String name, String seller, String price, String catalog, String introduction,
+                     String location, String releaseTime, String productId) {
         this.name = name;
         this.seller = seller;
         this.price = price;
@@ -26,6 +27,7 @@ public class ProductVO {
         this.introduction = introduction;
         this.location = location;
         this.releaseTime = releaseTime;
+        this.productId = productId;
     }
 
     public String getName() {
@@ -82,6 +84,14 @@ public class ProductVO {
 
     public void setReleaseTime(String releaseTime) {
         this.releaseTime = releaseTime;
+    }
+
+    public String getProductId() {
+        return productId;
+    }
+
+    public void setProductId(String productId) {
+        this.productId = productId;
     }
 
     @Override

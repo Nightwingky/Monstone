@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.SearchView;
 import android.widget.Toast;
@@ -14,12 +15,13 @@ import android.widget.Toast;
 import com.example.nightwingky.monstone.R;
 import com.example.nightwingky.monstone.main_program.fragmentHome.search.GetJsonData;
 import com.example.nightwingky.monstone.main_program.fragmentHome.search.SearchHttp;
+import com.example.nightwingky.monstone.main_program.product_Item.ProductActivity;
 
 import org.json.JSONException;
 
 import java.io.IOException;
 
-public class ProductListActivity extends AppCompatActivity {
+public class ProductListActivity extends AppCompatActivity implements MyItemClickListener{
 
     private SearchView mSearchView;
     private RecyclerView rv_list;
@@ -41,6 +43,7 @@ public class ProductListActivity extends AppCompatActivity {
         adapter = new ProductListAdapter(this);
         adapter.addList(SearchHttp.mList);
         rv_list.setAdapter(adapter);
+        adapter.setOnItemCLickListener(this);
         adapter.notifyDataSetChanged();
 
         mSearchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
@@ -58,8 +61,15 @@ public class ProductListActivity extends AppCompatActivity {
         });
     }
 
-    protected void refresh() {
-        onCreate(null);
+    @Override
+    public void onItemClick(View view, int position) {
+        String no = SearchHttp.mList.get(position).getProductId();
+
+        Intent intent = new Intent(ProductListActivity.this, ProductActivity.class);
+        intent.putExtra("no", no);
+        intent.putExtra("position", position);
+
+        startActivity(intent);
     }
 
     class SearchAsync extends AsyncTask<String, Void, Boolean> {

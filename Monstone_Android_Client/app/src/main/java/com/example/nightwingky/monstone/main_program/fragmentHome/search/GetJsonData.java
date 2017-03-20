@@ -36,6 +36,7 @@ public class GetJsonData {
             productVO.setPrice(jsonObject.getString("price"));
             productVO.setCatalog(jsonObject.getString("catalog"));
             productVO.setReleaseTime(jsonObject.getString("releasetime"));
+            productVO.setProductId(jsonObject.getString("no"));
 
             mList.add(productVO);
         }

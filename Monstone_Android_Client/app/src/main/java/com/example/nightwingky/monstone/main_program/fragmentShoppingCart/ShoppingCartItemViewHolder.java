@@ -37,6 +37,10 @@ public class ShoppingCartItemViewHolder extends RecyclerView.ViewHolder {
     }
 
     public void bindHolder(ShoppingCartListVO shoppingCartListVO) {
-
+        tv_seller.setText(shoppingCartListVO.getSeller());
+        tv_price.setText(shoppingCartListVO.getPrice());
+        tv_title.setText(shoppingCartListVO.getTitle());
+        tv_location.setText(shoppingCartListVO.getLocation());
+        img_portrait.setImageResource(R.mipmap.ic_launcher);
     }
 }

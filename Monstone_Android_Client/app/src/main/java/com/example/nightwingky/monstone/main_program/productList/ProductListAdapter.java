@@ -19,7 +19,9 @@ public class ProductListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
 
     private LayoutInflater inflater;
 
-    private List<ProductVO> productVOList;
+    private static List<ProductVO> productVOList;
+
+    private MyItemClickListener itemClickListener;
 
     public ProductListAdapter(Context context) {
         this.inflater = LayoutInflater.from(context);
@@ -32,7 +34,7 @@ public class ProductListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        return new ProductListItemViewHolder(inflater.inflate(R.layout.item_product_list, parent, false));
+        return new ProductListItemViewHolder(inflater.inflate(R.layout.item_product_list, parent, false), itemClickListener);
     }
 
     @Override
@@ -43,5 +45,13 @@ public class ProductListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
     @Override
     public int getItemCount() {
         return productVOList.size();
+    }
+
+    /**
+     * 设置ItemClickListener
+     * @param listener
+     */
+    public void setOnItemCLickListener(MyItemClickListener listener) {
+        this.itemClickListener = listener;
     }
 }
