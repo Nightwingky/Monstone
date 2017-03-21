@@ -1,7 +1,6 @@
 package com.example.nightwingky.monstone.main_program.productList;
 
 import android.content.Context;
-import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -15,13 +14,12 @@ import android.widget.Toast;
 import com.example.nightwingky.monstone.R;
 import com.example.nightwingky.monstone.main_program.fragmentHome.search.GetJsonData;
 import com.example.nightwingky.monstone.main_program.fragmentHome.search.SearchHttp;
-import com.example.nightwingky.monstone.main_program.product_Item.ProductActivity;
 
 import org.json.JSONException;
 
 import java.io.IOException;
 
-public class ProductListActivity extends AppCompatActivity implements MyItemClickListener{
+public class ProductListActivity extends AppCompatActivity {
 
     private SearchView mSearchView;
     private RecyclerView rv_list;
@@ -43,7 +41,19 @@ public class ProductListActivity extends AppCompatActivity implements MyItemClic
         adapter = new ProductListAdapter(this);
         adapter.addList(SearchHttp.mList);
         rv_list.setAdapter(adapter);
-        adapter.setOnItemCLickListener(this);
+        adapter.setOnItemClickListener(new OnRecyclerViewItemListener() {
+            @Override
+            public void onItemClick(View view, String data) {
+                Toast.makeText(ProductListActivity.this, data, Toast.LENGTH_SHORT).show();
+//                String no = SearchHttp.mList.get(position).getProductId();
+//
+//                Intent intent = new Intent(ProductListActivity.this, ProductActivity.class);
+//                intent.putExtra("no", no);
+//                intent.putExtra("position", position);
+//
+//                startActivity(intent);
+            }
+        });
         adapter.notifyDataSetChanged();
 
         mSearchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
@@ -61,16 +71,16 @@ public class ProductListActivity extends AppCompatActivity implements MyItemClic
         });
     }
 
-    @Override
-    public void onItemClick(View view, int position) {
-        String no = SearchHttp.mList.get(position).getProductId();
-
-        Intent intent = new Intent(ProductListActivity.this, ProductActivity.class);
-        intent.putExtra("no", no);
-        intent.putExtra("position", position);
-
-        startActivity(intent);
-    }
+//    @Override
+//    public void onItemClick(View view, int position) {
+//        String no = SearchHttp.mList.get(position).getProductId();
+//
+//        Intent intent = new Intent(ProductListActivity.this, ProductActivity.class);
+//        intent.putExtra("no", no);
+//        intent.putExtra("position", position);
+//
+//        startActivity(intent);
+//    }
 
     class SearchAsync extends AsyncTask<String, Void, Boolean> {
 

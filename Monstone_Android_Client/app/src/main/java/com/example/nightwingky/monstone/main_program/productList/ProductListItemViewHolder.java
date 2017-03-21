@@ -12,7 +12,7 @@ import com.example.nightwingky.monstone.myConst.LocationConst;
  * Created by nightwingky on 17-3-19.
  */
 
-public class ProductListItemViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
+public class ProductListItemViewHolder extends RecyclerView.ViewHolder {
 
     private ImageView img_portrait;
     private TextView tv_seller;
@@ -21,9 +21,9 @@ public class ProductListItemViewHolder extends RecyclerView.ViewHolder implement
     private TextView tv_location;
     private TextView tv_time;
 
-    private MyItemClickListener mListener;
+    private OnRecyclerViewItemListener mListener;
 
-    public ProductListItemViewHolder(View itemView, MyItemClickListener listener) {
+    public ProductListItemViewHolder(View itemView) {
         super(itemView);
 
         img_portrait = (ImageView) itemView.findViewById(R.id.img_portrait_product_list_item);
@@ -33,7 +33,7 @@ public class ProductListItemViewHolder extends RecyclerView.ViewHolder implement
         tv_location = (TextView) itemView.findViewById(R.id.location_product_list_item);
         tv_time = (TextView) itemView.findViewById(R.id.time_product_list_item);
 
-        this.mListener = listener;
+//        this.mListener = listener;
     }
 
     public void bindHolder(ProductVO productVO) {
@@ -46,10 +46,4 @@ public class ProductListItemViewHolder extends RecyclerView.ViewHolder implement
         tv_time.setText(productVO.getReleaseTime());
     }
 
-    @Override
-    public void onClick(View v) {
-        if(mListener != null) {
-            mListener.onItemClick(v, getPosition());
-        }
-    }
 }
