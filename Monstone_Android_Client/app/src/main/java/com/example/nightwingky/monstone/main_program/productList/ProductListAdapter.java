@@ -35,7 +35,7 @@ public class ProductListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-//        return new ProductListItemViewHolder(inflater.inflate(R.layout.item_product_list, parent, false), itemClickListener);
+
         View view = inflater.inflate(R.layout.item_product_list, parent, false);
         ProductListItemViewHolder viewHolder = new ProductListItemViewHolder(view);
 
@@ -46,7 +46,7 @@ public class ProductListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         ((ProductListItemViewHolder) holder).bindHolder(productVOList.get(position));
-        holder.itemView.setTag(productVOList.get(position));
+        holder.itemView.setTag(position);
     }
 
     @Override
@@ -59,19 +59,12 @@ public class ProductListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
     public void onClick(View v) {
         if (mOnItemClickListener != null) {
             //注意这里使用getTag方法获取数据
-            mOnItemClickListener.onItemClick(v,(String)v.getTag());
+            mOnItemClickListener.onItemClick(v, String.valueOf(v.getTag()));
         }
     }
 
     public void setOnItemClickListener(OnRecyclerViewItemListener listener) {
         this.mOnItemClickListener = listener;
     }
-//    /**
-//     * 设置ItemClickListener
-//     * @param listener
-//     */
-//    public void setOnItemCLickListener(OnRecyclerViewItemListener listener) {
-//        this.itemClickListener = listener;
-//    }
 
 }

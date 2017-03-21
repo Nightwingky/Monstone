@@ -1,4 +1,4 @@
-package com.example.nightwingky.monstone.main_program.product_Item;
+package com.example.nightwingky.monstone.main_program.productItem;
 
 import com.example.nightwingky.monstone.myConst.URLConst;
 
@@ -20,6 +20,7 @@ public class ProductHttp {
 
         FormBody formBody = new FormBody.Builder()
                 .add("no", no)
+                .add("cart", cart)
                 .build();
 
         Request request = new Request.Builder()
