@@ -51,7 +51,8 @@
         <activity android:name=".main_program.fragmentMe.change_user_info.ChangeUserInfoActivity" />
         <activity android:name=".main_program.fragmentMe.change_user_info.ItemChangeUserInfoActivity" />
         <activity android:name=".main_program.productList.ProductListActivity" />
-        <activity android:name=".main_program.productItem.ProductActivity"></activity>
+        <activity android:name=".main_program.productItem.ProductActivity" />
+        <activity android:name=".main_program.fragmentMe.transaction.TransactionActivity"></activity>
     </application>
 
 </manifest>

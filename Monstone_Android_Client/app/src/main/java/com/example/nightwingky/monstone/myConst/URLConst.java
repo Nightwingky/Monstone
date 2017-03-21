@@ -8,6 +8,8 @@ public class URLConst {
 
     private static String user_id = "";
 
+    private static final String queky1024_id = "bcd44a696a92e31ff93a7dfc7cca608a6593a5d5c4540b237ea3563187920d4";
+
     private static final String user_login_url = "http://118.228.180.248:8080/api/user/login/common";
 
     private static final String user_change_info_url = "http://118.228.180.248:8080/api/user/setting/detail";
@@ -30,6 +32,10 @@ public class URLConst {
 
     public static void setUser_id(String user_id) {
         URLConst.user_id = user_id;
+    }
+
+    public static String getQueky1024_id() {
+        return queky1024_id;
     }
 
     public static String getUser_id() {
