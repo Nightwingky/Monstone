@@ -30,6 +30,6 @@ public class TitleBarViewHolder extends TypeAbstractViewHolder<TitleBarGridVO> {
     public void bindHolder(TitleBarGridVO titleBarGridVO) {
         tv_title.setText(titleBarGridVO.getTitle());
         tv_introduction.setText(titleBarGridVO.getIntroduction());
-        img_info.setImageResource(R.mipmap.ic_launcher);
+        img_info.setImageResource(titleBarGridVO.getImgSrc());
     }
 }

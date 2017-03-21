@@ -6,12 +6,18 @@ package com.example.nightwingky.monstone.main_program.fragmentShoppingCart;
 
 public class ShoppingCartListVO {
 
+    private String id;
     private String seller;
     private String title;
     private String price;
     private String location;
 
-    public ShoppingCartListVO(String seller, String title, String price, String location) {
+    public ShoppingCartListVO() {
+    }
+
+    public ShoppingCartListVO(String id, String seller,
+                              String title, String price, String location) {
+        this.id = id;
         this.seller = seller;
         this.title = title;
         this.price = price;
@@ -50,10 +56,19 @@ public class ShoppingCartListVO {
         this.location = location;
     }
 
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
     @Override
     public String toString() {
         return "ShoppingCartListVO{" +
-                "seller='" + seller + '\'' +
+                "id='" + id + '\'' +
+                ", seller='" + seller + '\'' +
                 ", title='" + title + '\'' +
                 ", price='" + price + '\'' +
                 ", location='" + location + '\'' +

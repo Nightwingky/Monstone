@@ -24,7 +24,7 @@ public class URLConst {
 
     private static final String search_product_list_url = "http://118.228.180.248:8080/api/product/search/normal";
 
-    private static final String get_content_from_shopping_cart_url = "http://118.228.180.248:8080//api/cart/query";
+    private static final String get_content_from_shopping_cart_url = "http://118.228.180.248:8080/api/cart/query";
 
     private static final String add_to_shopping_cart = "http://118.228.180.248:8080/api/cart/modify";
 

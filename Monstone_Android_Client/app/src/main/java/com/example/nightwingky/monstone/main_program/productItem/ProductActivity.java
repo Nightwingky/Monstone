@@ -52,6 +52,12 @@ public class ProductActivity extends AppCompatActivity {
         });
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        finish();
+    }
+
     private void initView() {
         img_portrait = (ImageView) findViewById(R.id.img_portrait_product_item);
         tv_seller = (TextView) findViewById(R.id.seller_product_item);

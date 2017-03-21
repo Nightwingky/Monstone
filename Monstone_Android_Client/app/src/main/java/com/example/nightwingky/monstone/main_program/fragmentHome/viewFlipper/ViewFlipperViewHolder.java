@@ -20,9 +20,9 @@ public class ViewFlipperViewHolder extends TypeAbstractViewHolder<Object> {
     private ViewFlipper flipper;
 
     private int[] resId = {
-            R.drawable.pic1,
-            R.drawable.pic2,
-            R.drawable.pic3,
+            R.drawable.flippera,
+            R.drawable.flipperb,
+            R.drawable.flipperc,
     };
 
     private float startX;

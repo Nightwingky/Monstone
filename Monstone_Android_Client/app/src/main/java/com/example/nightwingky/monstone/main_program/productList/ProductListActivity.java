@@ -94,7 +94,7 @@ public class ProductListActivity extends AppCompatActivity {
                 adapter.addList(SearchHttp.mList);
                 adapter.notifyDataSetChanged();
                 InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-                imm.hideSoftInputFromWindow(mSearchView.getWindowToken(), 0) ;
+                imm.hideSoftInputFromWindow(mSearchView.getWindowToken(), 0);
             }
         }
     }

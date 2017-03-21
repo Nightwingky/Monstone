@@ -1,6 +1,7 @@
 package com.example.nightwingky.monstone.main_program.fragmentHome;
 
 import android.app.Fragment;
+import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -8,29 +9,25 @@ import android.support.annotation.Nullable;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.SearchView;
 import android.widget.Toast;
 
 import com.example.nightwingky.monstone.R;
 import com.example.nightwingky.monstone.main_program.fragmentHome.freshList.FreshListItemVO;
-import com.example.nightwingky.monstone.main_program.fragmentHome.homeConst.HomeConst;
+import com.example.nightwingky.monstone.myConst.HomeConst;
 import com.example.nightwingky.monstone.main_program.fragmentHome.itemList.ItemListGridVO;
 import com.example.nightwingky.monstone.main_program.fragmentHome.search.GetJsonData;
 import com.example.nightwingky.monstone.main_program.fragmentHome.search.SearchHttp;
 import com.example.nightwingky.monstone.main_program.fragmentHome.titleBar.TitleBarGridVO;
 import com.example.nightwingky.monstone.main_program.productList.ProductListActivity;
-import com.example.nightwingky.monstone.main_program.productList.ProductVO;
 
-import org.json.JSONArray;
 import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -67,6 +64,10 @@ public class FragmentHome extends Fragment {
 
                 queryText = String.valueOf(mSearchView.getQuery());
                 new SearchAsync().execute();
+
+                InputMethodManager imm = (InputMethodManager) FragmentHome.this.getActivity()
+                        .getSystemService(Context.INPUT_METHOD_SERVICE);
+                imm.hideSoftInputFromWindow(mSearchView.getWindowToken(), 0);
                 return true;
             }
 

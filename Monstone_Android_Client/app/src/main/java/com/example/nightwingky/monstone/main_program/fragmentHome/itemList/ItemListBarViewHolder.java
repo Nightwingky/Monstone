@@ -30,6 +30,6 @@ public class ItemListBarViewHolder extends TypeAbstractViewHolder<ItemListGridVO
     public void bindHolder(ItemListGridVO itemListGridVO) {
         tv_title.setText(itemListGridVO.getTitle());
         tv_introduction.setText(itemListGridVO.getIntroduction());
-        img_src.setImageResource(R.mipmap.ic_launcher);
+        img_src.setImageResource(itemListGridVO.getImgSrc());
     }
 }
