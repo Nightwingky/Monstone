@@ -32,7 +32,6 @@
             android:textColor="#000000"
             android:textSize="18sp"
             android:layout_marginLeft="15dp"
-            android:layout_alignBottom="@+id/price_fresh_home_list_view"
             android:layout_toRightOf="@+id/img_portrait_product_list_item"
             android:layout_toEndOf="@+id/img_portrait_product_list_item"
             android:id="@+id/seller_product_list_item"/>
