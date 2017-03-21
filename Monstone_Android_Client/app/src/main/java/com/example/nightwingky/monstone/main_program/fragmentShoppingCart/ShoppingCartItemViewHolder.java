@@ -21,8 +21,8 @@ public class ShoppingCartItemViewHolder extends RecyclerView.ViewHolder {
 
     private ImageView img_portrait;
 
-    private Button btn_cancel;
-    private Button btn_submit;
+//    private Button btn_cancel;
+//    private Button btn_submit;
 
     public ShoppingCartItemViewHolder(View itemView) {
         super(itemView);
@@ -32,8 +32,8 @@ public class ShoppingCartItemViewHolder extends RecyclerView.ViewHolder {
         this.tv_title = (TextView) itemView.findViewById(R.id.title_shopping_cart_list);
         this.tv_location = (TextView) itemView.findViewById(R.id.location_shopping_cart_list_item);
         this.img_portrait = (ImageView) itemView.findViewById(R.id.img_shopping_cart_list);
-        this.btn_cancel = (Button) itemView.findViewById(R.id.btn_submit_shopping_cart_list);
-        this.btn_submit = (Button) itemView.findViewById(R.id.btn_submit_shopping_cart_list);
+//        this.btn_cancel = (Button) itemView.findViewById(R.id.btn_submit_shopping_cart_list);
+//        this.btn_submit = (Button) itemView.findViewById(R.id.btn_submit_shopping_cart_list);
     }
 
     public void bindHolder(ShoppingCartListVO shoppingCartListVO) {

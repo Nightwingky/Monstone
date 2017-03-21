@@ -21,8 +21,6 @@ public class ProductListItemViewHolder extends RecyclerView.ViewHolder {
     private TextView tv_location;
     private TextView tv_time;
 
-    private OnRecyclerViewItemListener mListener;
-
     public ProductListItemViewHolder(View itemView) {
         super(itemView);
 
@@ -33,7 +31,6 @@ public class ProductListItemViewHolder extends RecyclerView.ViewHolder {
         tv_location = (TextView) itemView.findViewById(R.id.location_product_list_item);
         tv_time = (TextView) itemView.findViewById(R.id.time_product_list_item);
 
-//        this.mListener = listener;
     }
 
     public void bindHolder(ProductVO productVO) {
