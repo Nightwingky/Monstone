@@ -34,7 +34,7 @@ public class ProductListItemViewHolder extends RecyclerView.ViewHolder {
     }
 
     public void bindHolder(ProductVO productVO) {
-        img_portrait.setImageResource(R.mipmap.ic_launcher);
+        img_portrait.setImageResource(R.drawable.portrait2);
         tv_seller.setText(productVO.getSeller());
         tv_price.setText("￥" + productVO.getPrice());
         tv_title.setText(productVO.getName());

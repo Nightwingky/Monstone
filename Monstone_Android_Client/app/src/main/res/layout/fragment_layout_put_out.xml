@@ -77,18 +77,21 @@
             <ImageView
                 android:layout_width="100sp"
                 android:layout_height="match_parent"
-                android:src="@mipmap/ic_launcher"
+                android:src="@drawable/add"
+                android:clickable="true"
                 android:id="@+id/img_upload_fragment_put_out1"/>
             <ImageView
                 android:layout_width="100sp"
                 android:layout_height="match_parent"
-                android:src="@mipmap/ic_launcher"
+                android:src="@drawable/add"
+                android:clickable="true"
                 android:layout_marginLeft="10sp"
                 android:id="@+id/img_upload_fragment_put_out2"/>
             <ImageView
                 android:layout_width="100sp"
                 android:layout_height="match_parent"
-                android:src="@mipmap/ic_launcher"
+                android:src="@drawable/add"
+                android:clickable="true"
                 android:layout_marginLeft="10sp"
                 android:id="@+id/img_upload_fragment_put_out3"/>
         </LinearLayout>

@@ -30,6 +30,19 @@ public class HomeConst {
             R.drawable.item6,
     };
 
+    public static int[] imgSrc = {
+            R.drawable.iphone1,
+            R.drawable.iphone2,
+            R.drawable.iphone3,
+            R.drawable.iphone5,
+            R.drawable.mi1,
+            R.drawable.mi2,
+            R.drawable.mi3,
+            R.drawable.samsung1,
+            R.drawable.samsang2,
+            R.drawable.samsung3
+    };
+
     public static List<Object> getFlipper() {
         List<Object> mList = new ArrayList<>();
         mList.add(1);

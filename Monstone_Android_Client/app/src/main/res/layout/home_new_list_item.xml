@@ -16,10 +16,10 @@
         android:paddingRight="15sp">
 
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/img_home_new_list_portrait"
             android:layout_width="50sp"
             android:layout_height="50sp"
-            android:src="@mipmap/ic_launcher" />
+            android:src="@drawable/portrait2" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -31,8 +31,8 @@
             android:textSize="18sp"
             android:layout_marginLeft="15dp"
             android:layout_alignBottom="@+id/price_fresh_home_list_view"
-            android:layout_toRightOf="@+id/imageView"
-            android:layout_toEndOf="@+id/imageView"
+            android:layout_toRightOf="@+id/img_home_new_list_portrait"
+            android:layout_toEndOf="@+id/img_home_new_list_portrait"
             android:id="@+id/seller_fresh_home_list_item"/>
 
         <TextView
@@ -57,17 +57,20 @@
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="100dp"
-            android:src="@drawable/portrait"/>
+            android:src="@drawable/mi1"
+            android:id="@+id/img1_home_new_list"/>
         <ImageView
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="100dp"
-            android:src="@drawable/portrait"/>
+            android:src="@drawable/mi2"
+            android:id="@+id/img2_home_new_list"/>
         <ImageView
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="100dp"
-            android:src="@drawable/portrait"/>
+            android:src="@drawable/mi3"
+            android:id="@+id/img3_home_new_list"/>
     </LinearLayout>
 
     <TextView
@@ -76,7 +79,7 @@
         android:textColor="#000000"
         android:padding="15sp"
         android:textSize="18sp"
-        android:text="小米5s 4+128G 高配全网通双卡移动联通电信手机 外壳有轻微磕碰 功能正常"
+        android:text="小米5 4+128G 高配全网通双卡移动联通电信手机 外壳有轻微磕碰 功能正常"
         android:maxLines="2"
         android:id="@+id/product_fresh_home_list_view"/>
 

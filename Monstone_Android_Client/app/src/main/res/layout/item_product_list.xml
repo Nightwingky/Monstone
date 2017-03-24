@@ -20,7 +20,7 @@
             android:id="@+id/img_portrait_product_list_item"
             android:layout_width="50sp"
             android:layout_height="50sp"
-            android:src="@mipmap/ic_launcher"
+            android:src="@drawable/portrait2"
             />
 
         <TextView
@@ -58,17 +58,17 @@
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="100dp"
-            android:src="@drawable/portrait"/>
+            android:src="@drawable/ipad1"/>
         <ImageView
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="100dp"
-            android:src="@drawable/portrait"/>
+            android:src="@drawable/ipad2"/>
         <ImageView
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="100dp"
-            android:src="@drawable/portrait"/>
+            android:src="@drawable/ipad3"/>
     </LinearLayout>
 
     <TextView
@@ -77,7 +77,7 @@
         android:textColor="#000000"
         android:padding="15sp"
         android:textSize="18sp"
-        android:text="小米5s 4+128G 高配全网通双卡移动联通电信手机 外壳有轻微磕碰 功能正常"
+        android:text="ipad air2 64G 外壳有轻微磕碰 功能正常"
         android:maxLines="2"
         android:id="@+id/title_product_list"/>
 
