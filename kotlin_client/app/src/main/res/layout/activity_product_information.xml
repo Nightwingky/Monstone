@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1sp"
+        android:background="@color/layout_gray_me"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="15sp"
+        android:paddingRight="15sp"
+        android:layout_marginTop="5sp"
+        android:id="@+id/rl_title">
+
+        <ImageView
+            android:id="@+id/img_portrait_product_item"
+            android:layout_width="50sp"
+            android:layout_height="50sp"
+            android:src="@drawable/portrait"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:padding="10sp"
+            android:text="queky1024"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:layout_marginLeft="15dp"
+            android:layout_toRightOf="@+id/img_portrait_product_item"
+            android:layout_toEndOf="@+id/img_portrait_product_item"
+            android:id="@+id/seller_product_item"/>
+
+    </RelativeLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="300sp"
+        android:layout_below="@id/rl_title"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:paddingLeft="15sp"
+        android:paddingRight="15sp"
+        android:src="@drawable/mi1"
+        android:id="@+id/img_product_item"
+        android:layout_marginTop="5sp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#000000"
+        android:padding="15sp"
+        android:textSize="18sp"
+        android:text="小米5 4+128G 高配全网通双卡移动联通电信手机 外壳有轻微磕碰 功能正常"
+        android:maxLines="2"
+        android:id="@+id/title_product_item"
+        android:layout_below="@+id/img_product_item"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1sp"
+        android:background="@color/layout_gray_me"
+        android:layout_below="@id/title_product_item"
+        android:id="@+id/view2" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="来自：北京 海淀 清华东路35号 北京林业大学"
+        android:textSize="14sp"
+        android:paddingTop="5sp"
+        android:paddingBottom="5sp"
+        android:id="@+id/location_product_item"
+        android:paddingLeft="15sp"
+        android:paddingRight="15sp"
+        android:layout_below="@+id/view2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1sp"
+        android:background="@color/layout_gray_me"
+        android:layout_below="@id/location_product_item"
+        android:id="@+id/view" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="发布时间：Jan 21, 2017 9:13:14 PM"
+        android:textColor="@color/colorPrimary"
+        android:textSize="14sp"
+        android:paddingTop="5sp"
+        android:paddingBottom="5sp"
+        android:paddingLeft="15sp"
+        android:paddingRight="15sp"
+        android:id="@+id/time_product_item"
+        android:layout_below="@+id/view"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:orientation="horizontal"
+        android:id="@+id/linearLayout_end">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="￥1599.00"
+            android:textColor="#dd0000"
+            android:textSize="20sp"
+            android:padding="10sp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:id="@+id/price_product_item"
+            android:layout_weight="1"/>
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn_submit_product_info"
+            android:text="加入购物车"
+            android:background="@color/colorPrimary"
+            android:textColor="@color/colorWhite"/>
+    </LinearLayout>
+
+</RelativeLayout>

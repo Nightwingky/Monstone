@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clickable="true"
+    android:background="@color/colorWhite">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="正在交易中..."
+        android:paddingTop="5sp"
+        android:paddingBottom="5sp"
+        android:textSize="12sp"
+        android:layout_marginLeft="15sp"
+        android:layout_marginRight="15sp"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1sp"
+        android:background="@color/layout_gray_me"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="15sp"
+        android:paddingRight="15sp">
+
+        <TextView
+            android:id="@+id/tv_transaction_identity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="10sp"
+            android:paddingBottom="10sp"
+            android:textColor="#000000"
+            android:textSize="14sp"
+            android:text="卖家"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:padding="10sp"
+            android:text="queky1024"
+            android:textColor="#666666"
+            android:textSize="14sp"
+            android:layout_alignBottom="@+id/price_fresh_home_list_view"
+            android:layout_toRightOf="@+id/tv_transaction_identity"
+            android:layout_toEndOf="@+id/tv_transaction_identity"
+            android:id="@+id/seller_transaction"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="￥1599.00"
+            android:textColor="#dd0000"
+            android:textSize="16sp"
+            android:padding="10sp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:id="@+id/price_transaction" />
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1sp"
+        android:background="@color/layout_gray_me"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingLeft="15sp"
+        android:paddingRight="15sp">
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:src="@drawable/portrait"
+            android:id="@+id/img_transaction"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="8"
+            android:layout_height="wrap_content"
+            android:textColor="#000000"
+            android:padding="15sp"
+            android:textSize="14sp"
+            android:text="ipad air2 64G 外壳有轻微磕碰 功能正常"
+            android:maxLines="3"
+            android:id="@+id/title_transaction"/>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1sp"
+        android:background="@color/layout_gray_me"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15sp"
+        android:layout_marginRight="15sp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:text="来自：北京 海淀 清华东路35号 北京林业大学"
+            android:paddingTop="5sp"
+            android:paddingBottom="5sp"
+            android:textSize="12sp"
+            android:maxLines="3"
+            android:textColor="#000000"
+            android:gravity="center_vertical"
+            android:id="@+id/location_transaction"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="完成交易"
+            android:background="@color/colorPrimary"
+            android:textColor="@color/colorWhite"
+            android:id="@+id/btn_finish_transaction"/>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="5sp"
+        android:background="#dddddd"
+        android:id="@+id/product_transaction"/>
+</LinearLayout>
